@@ -1,0 +1,35 @@
+<meta charset="utf-8">
+
+<script type="text/javascript">
+	
+	/*Funciones*/
+	function saltarLinea() {
+
+		document.write("<br><br><br>");
+		document.write("<hr>");
+		document.write("<br><br>");
+
+	}//Cerrar saltarLinea
+
+	function imprimir(frase){
+
+		document.write(frase);
+		saltarLinea();
+	}//Cerrar imprimir Mensaje
+
+	function calcularImc(peso,altura){
+		imc=peso/(altura*altura);
+		return (imc);
+	}
+
+	function calcularImcPromedio(imc1,imc2){
+		promedio=(imc1+imc2)/2;
+		return (promedio);
+	}
+
+	/*Código*/
+	imprimir("Programa que calcula el IMC promedio");
+	imprimir("El IMC promedio es "+calcularImcPromedio(calcularImc(72,1.72),calcularImc(75,1.73)).toFixed(2));
+	imprimir("El IMC promedio es "+calcularImcPromedio(calcularImc(65,1.60),calcularImc(69,1.52)).toFixed(2));
+	
+</script>

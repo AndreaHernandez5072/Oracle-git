@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+
+<h1>Programa</h1>
+<br>
+<script type="text/javascript">
+	var anho = 2025;
+	var promedio;
+	var name1="Jimena";
+	var name2="Paola";
+	var name3="Laura";
+	var edadPaola=25;
+	var edadJimena=10;
+	var edadLaura=15;
+
+
+	document.write("La edad de <b>Juan</b> es: "+(anho-2000) +" años. <br>");
+	document.write("<br>");
+
+	document.write("La edad de <b>Pedro</b> es "+(anho-1995) +" años. <br>");
+	document.write("<br>");
+
+	anho = 2030;
+
+	document.write("La edad de <b>Carlos</b> es "+(anho-2005) +" años. <br>");
+	document.write("<br>");
+	document.write("<br>");
+
+	anho = 2020;
+
+	document.write("La edad de <b>"+name1+"</b> es "+edadJimena +" años. <br>");
+	document.write("<br>");
+
+	document.write("La edad de <b>"+name2+"</b> es "+edadPaola +" años. <br>");
+	document.write("<br>");
+
+	document.write("La edad de <b>"+name3+"</b> es "+edadLaura +" años. <br>");
+	document.write("<br>");
+	document.write("<br>");
+
+	promedio=(edadLaura+edadPaola+edadJimena)/3;
+	document.write("El promedio de las edades de "+name1+", "+name1+" y "+name3+"es: "+Math.round(promedio));
+</script>

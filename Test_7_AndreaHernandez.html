@@ -1,0 +1,43 @@
+<meta charset="UTF-8">
+
+<h1>Programa</h1>
+<br>
+<script type="text/javascript">
+	/*Funciones*/
+	function saltarLinea() {
+
+		document.write("<br><br><br>");
+		document.write("<hr>");
+		document.write("<br><br>");
+
+	}//Cerrar saltarLinea
+
+	function imprimir(frase){
+
+		document.write(frase);
+		saltarLinea();
+	}//Cerrar imprimir Mensaje
+
+	function imcFunction(peso,altura){
+		var imc;
+		imc=peso/(altura*altura);
+		return (imc);
+	}
+
+	function imc2(peso,altura,nombre){
+		//var imc;
+		imc=peso/(altura*altura);
+		imprimir("El IMC de " + nombre + " es <b>" + imc.toFixed(2) + "</b>");
+	}
+	/*Variable*/
+	
+
+	/*Codigo*/
+	imprimir("Hola amigos");
+
+	//Este cógido calcula las edades de Juan, Pedro y Carlos
+	imprimir("El imc de Christian es: "+imcFunction(71,1.72));
+	imc2(71,1.72,"Christian");
+	imc2(75,1.73,"Christian");
+	
+</script>
