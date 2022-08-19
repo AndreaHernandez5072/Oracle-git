@@ -1,0 +1,38 @@
+<meta charset="utf-8">
+
+<h1>Hi</h1>
+<br>
+<hr>
+
+<canvas width="600" height="400">
+	//Defino que puedo crear dibujos o graficos	
+	//Se utiliza en html para hacer graficos o dibujos
+
+</canvas>
+
+<script type="text/javascript">
+	var pantalla=document.querySelector("canvas");//Conectar etiquetas html con acciones a hacer
+	var pincel = pantalla.getContext("2d");//encargado de graficar en pantalla, pasamos lo que hay en pantalla a esa variable
+
+	//Fondo bandera
+	pincel.fillStyle="lightGrey";//propiedad
+	pincel.fillRect(0,0,600,400);//función
+	pincel.fillStyle="green";//propiedad
+	pincel.fillRect(0,0,200,400);//función
+	pincel.fillStyle="red";//propiedad
+	pincel.fillRect(400,0,200,400);//funcion
+
+	//Escudo
+	pincel.fillStyle="yellow";
+	pincel.beginPath();
+	pincel.moveTo(300,200);
+	pincel.lineTo(200,400);
+	pincel.lineTo(400,400);
+	pincel.fill();
+
+	pincel.fillStyle="blue";
+	pincel.beginPath();
+	pincel.arc(300,200,50,0,(2*3.14));//arc(coordenadas inicial x, y, radio, angulo inicial, angulo final)
+	pincel.fill();
+
+</script>

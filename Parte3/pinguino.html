@@ -1,0 +1,49 @@
+<meta charset="utf-8">
+
+<canvas width="600" height="400"></canvas>
+
+<script type="text/javascript">
+	var pantalla=document.querySelector("canvas");
+	var pincel=pantalla.getContext("2d");
+
+	//Cabeza y torso pinguino
+	pincel.fillStyle="darkgray";
+	pincel.beginPath();
+	pincel.arc(200,150,55,0,(2*3.14));
+	pincel.arc(200,275,80,0,(2*3.14));
+	pincel.fill();
+
+	//Blanco del pinguino
+	pincel.fillStyle="white";
+	pincel.beginPath();
+	pincel.arc(200,155,45,0,(2*3.14));
+	//pincel.arc(205,155,40,0,(2*3.14));
+	pincel.arc(200,270,70,0,(2*3.14));
+	//pincel.arc(205,270,65,0,(2*3.14));
+	pincel.fill();
+
+	//Ojos
+	pincel.fillStyle="black";
+	pincel.beginPath();
+	pincel.arc(183,138,10,0,(2*3.14));
+	pincel.arc(216,138,10,0,(2*3.14));
+	pincel.fill();
+
+	//Brillo en ojos
+	pincel.fillStyle="white";
+	pincel.beginPath();
+	pincel.arc(180,135,5,0,(2*3.14));
+	pincel.arc(213,135,5,0,(2*3.14));
+	pincel.fill();
+
+	//pico
+	pincel.fillStyle="orange";
+	pincel.beginPath();
+	pincel.moveTo(190,150);
+	pincel.lineTo(210,150);
+	pincel.lineTo(200,170);
+	pincel.fill();
+
+
+
+</script>

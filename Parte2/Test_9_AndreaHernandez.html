@@ -1,0 +1,49 @@
+<meta charset="utf-8">
+
+<h1>Adivina el número </h1>
+<hr>
+
+<script type="text/javascript">
+	/*Funciones*/
+	function saltarLinea(){
+		document.write("<br><br><br>");
+		document.write("<hr>");
+		document.write("<br><br>");
+	}
+
+	function imprimir(frase){
+		document.write(frase);
+		saltarLinea();
+	}
+
+	function numeroAzar(n){
+		return (Math.round(Math.random()*n));
+	}
+	
+	var rango = parseInt(prompt("Ingrese numero maximo que le gustaria adivinar"));
+	var numeroPensado=numeroAzar(rango);
+	var numeroLanzado=null;
+	var intento=1;
+
+	while(numeroPensado!=numeroLanzado){
+		numeroLanzado = parseInt(prompt("Ingrese el número entre 0-"+rango));
+		if(numeroLanzado==numeroPensado){
+			alert("Acerto");
+			imprimir("¡¡ACERTO!!");
+		}
+		else{
+			if(numeroLanzado>numeroPensado){
+				alert("Fallo, el número ingresado fue: "+numeroLanzado+" es mayor al número pensado");
+			}else{
+				alert("Fallo, el número ingresado fue: "+numeroLanzado+" es menor al número pensado");
+			}
+		}
+		if(intento==5){
+			alert("Paso más de 5 intentos");
+			imprimir("No acerto :(");
+			break;
+		}
+		intento++;
+	}
+	imprimir("fin");
+</script>

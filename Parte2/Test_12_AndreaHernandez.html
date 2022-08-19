@@ -1,0 +1,41 @@
+<meta charset="utf-8">
+
+<h1>Bienvenido a Alura </h1>
+<hr>
+<br>
+<input type="" name="">
+<button>Verificar si acertó con el sercreto</button>
+
+<script type="text/javascript">
+	/*Funciones*/
+	function saltarLinea(){
+		document.write("<br><br><br>");
+		document.write("<hr>");
+		document.write("<br><br>");
+	}
+
+	function imprimir(frase){
+		document.write(frase);
+		saltarLinea();
+	}
+
+	function verificar(){
+		if(parseInt(input.value)==secreto){
+			alert("Acerto el secreto");
+		}
+		else{
+			alert("No acerto");
+		}
+		input.value="";
+		input.focus();
+	}
+
+	/*Código*/
+	var secreto=Math.round(Math.random()*10);
+	var input=document.querySelector("input"); //traera todo lo del input aquí
+	var button=document.querySelector("button"); //capturar el objeto button
+	input.focus();//seleccionado el cuadro de texto
+	
+	button.onclick=verificar;
+
+</script>

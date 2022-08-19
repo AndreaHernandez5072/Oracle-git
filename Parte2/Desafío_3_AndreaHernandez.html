@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+
+<h1>Recetas de Armando </h1>
+
+<script>
+
+  var listaIngredientes=[];
+  var cantidadIngredientes=parseInt(prompt("¿Cuántos ingredientes va a añadir?"));
+  var existeIngrediente=false;
+  var contador=1;
+
+  while(contador<=cantidadIngredientes){
+    var ingredienteNuevo=prompt("Ingrese el ingrediente "+contador);
+    existeIngrediente=false;
+    for(var pos=0;pos<listaIngredientes.length;pos++){
+        if(listaIngredientes[pos]==ingredienteNuevo){
+            existeIngrediente=true;
+            alert("El ingrediente: "+ingredienteNuevo+" ya está en la receta");
+            break;//si lo encontramos para que esperar que termine el for
+        }
+    }
+    if(existeIngrediente==false){
+        listaIngredientes.push(ingredienteNuevo);
+        contador++;
+    }
+  }
+</script>

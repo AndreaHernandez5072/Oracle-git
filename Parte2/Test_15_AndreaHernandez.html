@@ -1,0 +1,75 @@
+<meta charset="utf-8">
+
+<h1>Adivina el numero secreto </h1>
+<p>Adivina los 4 números secretos</p>
+<hr>
+<br>
+<input type="" name="">
+<button>Verificar si acertó con el sercreto</button>
+
+<script type="text/javascript">
+	/*Funciones*/
+	function saltarLinea(){
+		document.write("<br><br><br>");
+		document.write("<hr>");
+		document.write("<br><br>");
+	}
+
+	function imprimir(frase){
+		document.write(frase);
+		saltarLinea();
+	}
+
+	function random(n){
+		return (Math.round(Math.random()*n));
+	}
+
+	function verificar(){
+		var encontrado=false;
+		for(var posicion=0;posicion<secreto.length;posicion++){
+			if(parseInt(input.value)==secreto[posicion]){
+				alert("Acertó el secreto "+(posicion+1));
+				encontrado=true;
+				break; //Cortamos el for porque no necesitamos seguir buscando
+			}
+		}
+		if(encontrado==false){
+			alert("No acertó");
+		}
+		input.value="";
+		input.focus();
+	}
+
+	function sortearRandom(n){
+		var secretos=[];
+		var randomNumero;
+		var encontrado=false;
+		var i=0;
+		while(secretos.length<4){
+			randomNumero=random(n);
+			if(randomNumero!=0){
+				for(var posicion=0;posicion<secretos.length;posicion++){
+					if(randomNumero==secretos[posicion]){
+						encontrado=true;
+					}
+				}
+				if(encontrado==false){
+					secretos.push(randomNumero);
+				}
+			}
+			i++;
+		}
+		return secretos;
+	}
+
+	/*Código*/
+	var secreto=sortearRandom(parseInt(prompt("Ingrese la números más grande que le gustaría adivinar:")));
+	var input=document.querySelector("input"); //traera todo lo del input aquí
+	var button=document.querySelector("button"); //capturar el objeto button
+	input.focus();//seleccionado el cuadro de texto
+	//alert(secreto);
+	
+	button.onclick=verificar;
+	
+
+</script>

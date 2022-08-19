@@ -1,0 +1,45 @@
+<meta charset="utf-8">
+
+<h1>Bienvenido a Alura </h1>
+<hr>
+
+<script type="text/javascript">
+	/*Funciones*/
+	function saltarLinea(){
+		document.write("<br><br><br>");
+		document.write("<hr>");
+		document.write("<br><br>");
+	}
+
+	function imprimir(frase){
+		document.write(frase);
+		saltarLinea();
+	}
+
+	/*Código*/
+	var intentoUsuario=1;
+	var intentoMaximo=3;
+    var inicioDeSesionRegistrado = "alura";
+    var contrasenhaRegistrada = "alura321";
+
+    
+
+    while(intentoUsuario<=intentoMaximo){
+    	var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+    	var contrasenhaIngresada = prompt("Ingrese su contraseña");
+    	if( inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada ) {
+        	alert("Bienvenido al sistema " + inicioDeSesionIngresado);
+        	intentoUsuario=intentoMaximo;
+    	} else {
+        	if(intentoUsuario==intentoMaximo){
+        		alert("Excedio el número de intentos permitidos, intente más tarde");
+        	}
+        	else{
+        		alert("Fallo, intente nuevamente");
+        	}
+    	}
+    	intentoUsuario++;
+    }
+    
+
+</script>

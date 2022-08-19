@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+
+<h1>Hi</h1>
+<br>
+<hr>
+
+<canvas width="600" height="400">
+	//Defino que puedo crear dibujos o graficos	
+	//Se utiliza en html para hacer graficos o dibujos
+
+</canvas>
+
+<script type="text/javascript">
+	function dibujarPetalo(x,y,radio,fondo){
+		var pantalla=document.querySelector("canvas");
+		var pincel=pantalla.getContext("2d");
+		pincel.fillStyle=fondo;
+		pincel.beginPath();
+		pincel.arc(x,y,radio,0,(2*3.14));
+		pincel.fill();
+	}
+
+	function dibujarFlor(){
+		dibujarPetalo(xi,yi,radio,colores[2]); //Central
+		dibujarPetalo((xi-2*radio),yi,radio,colores[0]); //Izquierdo
+		dibujarPetalo(xi,(yi-2*radio),radio,colores[1]); //Superior
+		dibujarPetalo(xi,(yi+2*radio),radio,colores[3]); //Inferior
+		dibujarPetalo((xi+2*radio),yi,radio,colores[4]); //Derecho
+	}
+
+	//Variables
+	var radio=10;
+	var colores=["orange","yellow","red","blue","black"];
+	var xi=300;
+	var yi=200;
+	var cantCuadrados=0;
+
+	dibujarFlor();	
+
+</script>

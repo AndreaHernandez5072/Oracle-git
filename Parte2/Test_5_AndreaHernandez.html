@@ -1,0 +1,38 @@
+<meta charset="utf-8">
+
+<h1>Juego adivina el número que estoy pensando </h1>
+<hr>
+<script type="text/javascript">
+	/*Funciones*/
+	function saltarLinea(){
+		document.write("<br><br><br>");
+		document.write("<hr>");
+		document.write("<br><br>");
+	}
+
+	function imprimir(frase){
+		document.write(frase);
+		saltarLinea();
+	}
+
+	
+
+	/*Variables*/
+	var edad=parseInt(prompt("¿Cuál es su edad?"));
+	var tieneLicencia=prompt("¿Tiene licencia de conducir? Responder S o N");
+
+	/*Código*/
+	if(edad>=18 && tieneLicencia=="S"){
+		imprimir("Puede conducir y es mayor de edad");
+	}
+	else if(edad>=18 && tieneLicencia=="N"){
+		imprimir("No puede conducir y es mayor de edad");
+	}
+	else if(edad<18&&tieneLicencia=="S"){
+		imprimir("Puede conducir pero es menor de edad");
+	}
+	else{
+		imprimir("No puede conducir");
+	}
+
+</script>

@@ -1,0 +1,33 @@
+<meta charset="utf-8">
+
+<h1>Cálculo de los años pasadon un mundial </h1>
+<hr>
+
+<script type="text/javascript">
+	/*Funciones*/
+	function saltarLinea(){
+		document.write("<br><br><br>");
+		document.write("<hr>");
+		document.write("<br><br>");
+	}
+
+	function imprimir(frase){
+		document.write(frase);
+		saltarLinea();
+	}
+
+	/*Variable*/
+	var i=0;
+	var anhoPrimerMundial=1930;
+	var limite=parseInt(prompt("Ingrese el año límite para calcular muldiales:"));
+
+	alert("Hubo el primer mundial de la FIFA en el año "+anhoPrimerMundial);
+
+	while(anhoPrimerMundial<=limite){
+		imprimir("Hubo mundial de la FIFA en el año: "+anhoPrimerMundial);
+		i++;
+		anhoPrimerMundial=anhoPrimerMundial+4;
+	}
+	imprimir("La cantidad de mundiales desde 1930 a "+limite+" son: "+i);
+
+</script>

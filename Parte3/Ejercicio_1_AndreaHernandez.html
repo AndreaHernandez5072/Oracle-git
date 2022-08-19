@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+<canvas width="600" height="400"></canvas>
+
+<script type="text/javascript">
+	function exibirAlerta(evento){
+
+		console.log(evento); //mostrar en consola
+		alert("("+x+","+y+")"+"Usted hizo un clic");
+	}
+
+	function dibujarCirculo(evento){
+		var x=evento.pageX-pantalla.offsetLeft;//Quitamos bode blanco de pantalla
+		var y=evento.pageY-pantalla.offsetTop;
+
+		pincel.fillStyle=colores[noClic];
+		pincel.beginPath();
+		pincel.arc(x,y,20,0,(2*3.14));
+		pincel.fill();
+	}
+	function alterarColor(){
+		noClic++;
+		alert("Color: "+colores[noClic]);
+		if(noClic>=colores.length){
+			noClic=0;
+		}
+		return false;
+	}
+
+	/*Codigo*/
+	var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    var colores=["blue","red","green"];
+    var noClic=0;
+
+	pincel.fillStyle="lightgray";
+	pincel.fillRect(0,0,600,400);
+	
+	//Obtener la coordenada exacta donde el usuario dio un clic
+	pantalla.onclick=dibujarCirculo; //da un clic mostrar en pantalla un mensaje
+	pantalla.oncontextmenu=alterarColor;
+
+</script>

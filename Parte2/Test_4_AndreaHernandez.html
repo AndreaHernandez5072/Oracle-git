@@ -1,0 +1,36 @@
+<meta charset="utf-8">
+
+<h1>Juego adivina el número que estoy pensando </h1>
+<hr>
+<script type="text/javascript">
+	/*Funciones*/
+	function saltarLinea(){
+		document.write("<br><br><br>");
+		document.write("<hr>");
+		document.write("<br><br>");
+	}
+
+	function imprimir(frase){
+		document.write(frase);
+		saltarLinea();
+	}
+
+	
+
+	/*Variables*/
+	var numeroPensado = Math.round(Math.random()*10);
+	var numeroLanzado;
+
+	do{
+		numeroLanzado = parseInt(prompt("Ingrese el número entre 0-10"));
+		if(numeroLanzado==numeroPensado){
+			imprimir("<big>Acerto</big>");
+		}
+		else{
+			alert("Fallo");
+		}
+	}while(numeroPensado!=numeroLanzado);
+	/*Código*/
+	
+
+</script>
